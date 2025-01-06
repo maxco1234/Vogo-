@@ -71,28 +71,5 @@
 
   <script>
     function changeBackgroundColor() {
-      // Change the background color to a new color code
-      document.body.style.backgroundColor = "#4caf50"; // Green color
-    }
-  </script>
-</body>
-</html><ALOASK-SEPARATE-EDITORS>document.getElementById('send-message').addEventListener('click', function() {
-    var message = document.getElementById('chat-input').value;
-    if (message.trim()) {
-        var messageDiv = document.createElement('div');
-        messageDiv.classList.add('chat-message');
-        messageDiv.innerText = message;
-        document.getElementById('chat-messages').appendChild(messageDiv);
-        document.getElementById('chat-input').value = ''; // clear the input
-        document.getElementById('chat-box').scrollTop = document.getElementById('chat-box').scrollHeight; // scroll to bottom
-    }
-});
-
-// Optional: Automatically simulate incoming messages
-setInterval(function() {
-    var messageDiv = document.createElement('div');
-    messageDiv.classList.add('chat-message');
-    messageDiv.innerText = 'Incoming message...';
-    document.getElementById('chat-messages').appendChild(messageDiv);
-    document.getElementById('chat-box').scrollTop = document.getElementById('chat-box').scrollHeight;
-}, 5000);
+      // Change the background color 
+      document.body.style.backgroundColor = "#4caf50"; 
