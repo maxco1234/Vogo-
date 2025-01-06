@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Streaming</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="streaming-container">
+        <div class="video-stream">
+            <video id="live-stream" width="800" height="450" controls autoplay>
+                <source src="your-stream-url" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <div class="chat-container">
+            <div id="chat-box">
+                <div id="chat-messages"></div>
+                <input type="text" id="chat-input" placeholder="Type a message..." />
+                <button id="send-message">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Background Color</title>
+  <style>
+    body {
+      background-color: #ff6347; /* This is a red-orange color */
+    }
+  </style>
+</head>
+<body>
+  <h1>Hello, World!</h1>
+</body>
+</html><ALOASK-SEPARATE-EDITORS>#send-message {
+    padding: 8px 16px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+#send-message:hover {
+    background-color: #0056b3;
+}<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Change Background Color</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Click the button to change the background color</h1>
+  <button onclick="changeBackgroundColor()">Change Background Color</button>
+
+  <script>
+    function changeBackgroundColor() {
+      // Change the background color to a new color code
+      document.body.style.backgroundColor = "#4caf50"; // Green color
+    }
+  </script>
+</body>
+</html><ALOASK-SEPARATE-EDITORS>document.getElementById('send-message').addEventListener('click', function() {
+    var message = document.getElementById('chat-input').value;
+    if (message.trim()) {
+        var messageDiv = document.createElement('div');
+        messageDiv.classList.add('chat-message');
+        messageDiv.innerText = message;
+        document.getElementById('chat-messages').appendChild(messageDiv);
+        document.getElementById('chat-input').value = ''; // clear the input
+        document.getElementById('chat-box').scrollTop = document.getElementById('chat-box').scrollHeight; // scroll to bottom
+    }
+});
+
+// Optional: Automatically simulate incoming messages
+setInterval(function() {
+    var messageDiv = document.createElement('div');
+    messageDiv.classList.add('chat-message');
+    messageDiv.innerText = 'Incoming message...';
+    document.getElementById('chat-messages').appendChild(messageDiv);
+    document.getElementById('chat-box').scrollTop = document.getElementById('chat-box').scrollHeight;
+}, 5000);
